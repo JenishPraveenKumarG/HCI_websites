@@ -3,59 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>College Exam Registration Portal</title>
+    <title>Exam Registration Portal</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <div class="container">
-        <h1>College Exam Registration Portal</h1>
-        <form id="examRegistrationForm">
-            <div class="form-group">
-                <label for="studentId">Student ID:</label>
-                <input type="text" id="studentId" required>
-            </div>
-            <div class="form-group">
-                <label for="name">Name:</label>
-                <input type="text" id="name" required>
-            </div>
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" required>
-            </div>
-            <div class="form-group">
-                <label for="dob">Date of Birth:</label>
-                <input type="date" id="dob" required>
-            </div>
-            <div class="form-group">
-                <label for="semester">Semester:</label>
-                <select id="semester" required>
-                    <option value="" disabled selected>Select your semester</option>
-                    <option value="1">1st Semester</option>
-                    <option value="2">2nd Semester</option>
-                    <option value="3">3rd Semester</option>
-                    <option value="4">4th Semester</option>
-                    <option value="5">5th Semester</option>
-                    <option value="6">6th Semester</option>
-                    <option value="7">7th Semester</option>
-                    <option value="8">8th Semester</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="subjects">Subjects:</label>
-                <select id="subjects" multiple required>
-                    <option value="math">Mathematics</option>
-                    <option value="physics">Physics</option>
-                    <option value="chemistry">Chemistry</option>
-                    <option value="biology">Biology</option>
-                    <option value="computerScience">Computer Science</option>
-                    <option value="english">English</option>
-                    <option value="history">History</option>
-                    <option value="geography">Geography</option>
-                </select>
-            </div>
-            <button type="submit">Register</button>
+        <h1>Exam Registration Portal</h1>
+        <form id="registrationForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required><br>
+
+            <label for="examType">Exam Type:</label>
+            <select id="examType" name="examType">
+                <option value="GMAT">GMAT</option>
+                <option value="GRE">GRE</option>
+                <option value="SAT">SAT</option>
+            </select><br>
+
+            <label for="examDate">Exam Date:</label>
+            <input type="date" id="examDate" name="examDate" required><br>
+
+            <label>
+                <input type="checkbox" id="terms" required>
+                I accept the terms and conditions
+            </label><br>
+
+            <label for="progress">Progress:</label>
+            <progress id="progress" value="0" max="100"></progress><br>
+
+            <button type="button" onclick="submitForm()">Submit</button>
         </form>
+        <div id="result"></div>
     </div>
     <script src="script.js"></script>
 </body>
 </html>
+
