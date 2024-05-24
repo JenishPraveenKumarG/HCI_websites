@@ -1,5 +1,12 @@
-document.getElementById('examRegistrationForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    alert('Registration successful!');
-    // Here you can handle form submission, e.g., send data to a server
-});
+function submitForm() {
+    let form = document.getElementById("registrationForm");
+    let progress = document.getElementById("progress");
+
+    if (form.checkValidity()) {
+        progress.value = 100;
+        document.getElementById("result").innerText = "Form submitted!";
+    } else {
+        form.reportValidity();
+    }
+}
+
